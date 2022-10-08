@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+@import "animate.css";
+
+@font-face {
+  font-family: Gumela;
+  src: url(../src/fonts/Gumela\ Regular.otf);
+}
+@font-face {
+  font-family: CoolveticaRg;
+  src: url(../src/fonts/CoolveticaRg-Regular.woff);
+}
+@font-face {
+  font-family: BlackWidowMovie;
+  src: url(../src/fonts/BlackWidowMovie-d95Rg.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --yellow: #f5c32c;
+  --orange: #fca61f;
+  --black: #242d49;
+  --gray: #788097;
+  --blueCard: #ddf8fe;
+  --White: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Gumela;
+  background-color: var(--black);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.active {
+  color: var(--yellow);
+}
+
+/* Card Animation */
+
+.ele-haver:hover,
+.card-animtaion:hover .ele-haver {
+  animation: rubberBand 1s 0.5s;
+}
+
+/* Start Media */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }

@@ -1,0 +1,34 @@
+.p-projects > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.p-projects > ul li {
+  border: 3px solid var(--orange);
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.p-projects > ul li::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.p-projects > ul li:hover::before {
+  content: none;
+}
+
+.p-pop-container {
+  display: none;
+}
+
+.p-pop-container.pop-show {
+  display: block;
+}

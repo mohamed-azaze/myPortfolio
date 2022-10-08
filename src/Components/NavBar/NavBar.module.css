@@ -1,0 +1,89 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 4px 31px 1px #000000a6;
+  width: 700px;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+nav,
+nav .n-links,
+nav .n-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+}
+
+nav a {
+  color: var(--blueCard);
+  font-size: 20px;
+  font-weight: bold;
+}
+nav a:hover,
+nav a.active {
+  color: var(--yellow);
+}
+
+@media (max-width: 575px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .n-logo,
+  .n-icon {
+    padding: 0 20px;
+    cursor: pointer;
+  }
+
+  .n-logo h3 {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: inherit;
+    letter-spacing: 2px;
+    color: var(--yellow);
+  }
+
+  .n-icon {
+    color: var(--yellow);
+  }
+
+  nav .n-links {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 230px;
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+    top: -290px;
+    right: 0px;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 4px 31px 1px #000000a6;
+    transition: top 0.4s;
+  }
+
+  nav .active {
+    top: 70px;
+  }
+}
+
+@media (min-width: 576px) {
+  .n-logo {
+    display: none;
+  }
+  .n-icon {
+    display: none;
+  }
+  .n-links {
+    height: 100%;
+  }
+}

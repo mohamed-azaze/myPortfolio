@@ -1,0 +1,125 @@
+.c-me-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  gap: 15px;
+}
+
+.c-me-form,
+.c-me-map {
+  width: 50%;
+  max-width: 100%;
+}
+
+.c-me-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-me-form input,
+.c-me-form textarea {
+  outline: none;
+  border: none;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-family: Gumela;
+  background-color: var(--blueCard);
+}
+
+.c-me-form input::placeholder,
+.c-me-form textarea::placeholder {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  padding-left: 5px;
+}
+
+.c-me-form input:focus::placeholder,
+.c-me-form textarea:focus::placeholder {
+  opacity: 0;
+}
+.c-input-group {
+  width: 384px;
+}
+
+.c-input-group:nth-child(1) {
+  display: flex;
+  gap: 10px;
+}
+.c-input-group input[type="text"],
+.c-input-group input[type="email"] {
+  width: calc(100% - 16px);
+  height: 25px;
+  padding: 8px;
+}
+
+.c-input-group textarea {
+  width: calc(100% - 16px);
+  height: 100px;
+  resize: none;
+  padding: 8px;
+}
+.c-input-group input[type="submit"] {
+  font-weight: 400;
+  font-size: 15px;
+  float: right;
+  padding: 5px 12px;
+  margin-right: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
+  transition: all 0.3s;
+}
+
+.c-input-group input[type="submit"]:hover {
+  background-color: var(--yellow);
+  color: #000;
+}
+
+.c-me-map img {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .c-me-container {
+    flex-direction: column;
+  }
+  .c-me-form,
+  .c-me-map {
+    width: 100%;
+  }
+  .c-me-map {
+    margin-bottom: 25px;
+  }
+
+  .c-input-group:nth-child(1) {
+    display: block;
+    margin-top: 0;
+  }
+  .c-input-group {
+    max-width: 384px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .c-input-group {
+    width: 450px;
+  }
+  .c-input-group input[type="text"],
+  .c-input-group input[type="email"] {
+    height: 35px;
+  }
+  .c-input-group input[type="submit"] {
+    font-size: 18px;
+    padding: 8px 18px;
+  }
+
+  .c-input-group textarea {
+    height: 120px;
+  }
+}

@@ -1,0 +1,12 @@
+.a-cards-contianer {
+  min-height: 800px;
+  margin: 10px auto 30px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .a-cards-contianer {
+    height: 1600px;
+  }
+}

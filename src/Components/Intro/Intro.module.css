@@ -1,0 +1,137 @@
+.i-container {
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+}
+
+.i-image {
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.i-image img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.i-layout {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.i-intro {
+  width: 450px;
+  max-width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.i-me {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--orange);
+}
+
+.i-info h1 {
+  font-family: gumela;
+  text-align: left;
+  font-size: 30px;
+  color: #f1f1f1;
+  letter-spacing: 2px;
+  padding-left: 65px;
+  margin-bottom: 15px;
+}
+
+.i-info h1 span {
+  color: var(--orange);
+  font-family: CoolveticaRg;
+}
+
+.i-info p {
+  font-size: 16px;
+  color: #eee;
+  line-height: 1.3;
+
+  margin-bottom: 25px;
+}
+.i-my-cv {
+  margin-bottom: 30px;
+}
+.i-my-cv a {
+  color: #fff;
+  border: 2px solid var(--orange);
+  border-radius: 20px;
+  padding: 8px 50px 8px 15px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.i-my-cv a:hover {
+  background-color: var(--orange);
+  transform-origin: right;
+}
+.i-my-cv svg {
+  color: #fff;
+  border-radius: 50%;
+  padding: 12px 12px 10px;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--orange);
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.icons a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+}
+.icons a:hover:first-of-type {
+  color: #0077b5;
+}
+.icons a:hover:last-of-type {
+  color: #4078c0;
+}
+
+@media (max-width: 575px) {
+  .i-info h1 {
+    font-size: 28px;
+    padding-left: 45px;
+  }
+  .i-info p {
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+}
+@media (min-width: 1400px) {
+  .i-me {
+    width: 260px;
+    height: 260px;
+  }
+  .i-info h1 {
+    font-size: 35px;
+  }
+  .i-info p {
+    font-size: 17px;
+    line-height: 1.4;
+  }
+}

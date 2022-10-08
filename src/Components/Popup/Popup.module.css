@@ -1,0 +1,104 @@
+.pup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+
+.pup-popup {
+  width: 600px;
+  min-height: 400px;
+  background-color: var(--black);
+  position: relative;
+}
+
+.pup-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  min-height: 25px;
+  background-color: var(--gray);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pup-close-button span {
+  color: #f1f1f1;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pup-img {
+  width: 600px;
+  max-width: 100%;
+  height: 280px;
+  overflow-x: hidden;
+}
+.pup-img img {
+  max-width: 100%;
+}
+
+.pup-info,
+.pup-view-button {
+  margin-top: 15px;
+  padding-left: 25px;
+}
+.pup-name,
+.pup-lag {
+  display: block;
+  font-weight: bold;
+  color: var(--orange);
+  text-transform: capitalize;
+}
+.pup-name {
+  padding-bottom: 10px;
+}
+
+.pup-name > span,
+.pup-lag > span {
+  color: #fff;
+}
+.pup-view-button {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.pup-view-button a {
+  background-color: transparent;
+  color: var(--orange);
+  border-radius: 6px;
+  border: 2px solid var(--orange);
+  padding: 5px 15px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.pup-view-button a:hover {
+  background-color: var(--orange);
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .pup-popup {
+    width: 320px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .pup-popup {
+    width: 700px;
+  }
+  .pup-img {
+    width: 700px;
+  }
+}

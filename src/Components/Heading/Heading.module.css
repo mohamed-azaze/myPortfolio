@@ -1,0 +1,36 @@
+.header {
+  text-align: center;
+}
+.a-text {
+  position: relative;
+  z-index: 1;
+}
+.a-text h2 {
+  font-size: 50px;
+  font-family: CoolveticaRg;
+  letter-spacing: 2px;
+  color: var(--White);
+}
+.a-text h2 > span {
+  color: var(--orange);
+}
+.a-text > span {
+  font-size: 100px;
+  font-weight: bolder;
+  color: #ddd;
+  opacity: 0.2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+@media (max-width: 576px) {
+  .a-text h2 {
+    font-size: 35px;
+  }
+  .a-text > span {
+    font-size: 65px;
+  }
+}
