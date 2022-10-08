@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/myportfolio/static/css/main.d5bbabca.css",
+    "main.js": "/myportfolio/static/js/main.50eb5547.js",
+    "static/media/azaze.png": "/myportfolio/static/media/azaze.5c0d94ec8c970fc98f8a.png",
+    "static/media/Leadership.png": "/myportfolio/static/media/Leadership.793923c62b2b4f1d2252.png",
+    "static/media/Home.png": "/myportfolio/static/media/Home.8397c2c45adbcbf86e86.png",
+    "static/media/bg-home.jpg": "/myportfolio/static/media/bg-home.b01fe58a627e40c3b75b.jpg",
+    "static/media/Leadership-shot.png": "/myportfolio/static/media/Leadership-shot.e154cb95301df7b69a83.png",
+    "static/media/azaze-shot.png": "/myportfolio/static/media/azaze-shot.d0f927e1f71f66bb0d44.png",
+    "static/media/Azazy.jpg": "/myportfolio/static/media/Azazy.9b3497537f1f9d4a2ef9.jpg",
+    "static/media/Resume.pdf": "/myportfolio/static/media/Resume.25988eeac5353a2d0b02.pdf",
+    "static/media/CRUD.png": "/myportfolio/static/media/CRUD.6a8cbd47334161334c16.png",
+    "static/media/Gumela Regular.otf": "/myportfolio/static/media/Gumela Regular.0ae83c6988a536716eb4.otf",
+    "static/media/CoolveticaRg-Regular.woff": "/myportfolio/static/media/CoolveticaRg-Regular.8307bfa187bccdc55f4d.woff",
+    "static/media/BlackWidowMovie-d95Rg.ttf": "/myportfolio/static/media/BlackWidowMovie-d95Rg.dbda18a4f5d3b754cc9b.ttf",
+    "index.html": "/myportfolio/index.html",
+    "main.d5bbabca.css.map": "/myportfolio/static/css/main.d5bbabca.css.map",
+    "main.50eb5547.js.map": "/myportfolio/static/js/main.50eb5547.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d5bbabca.css",
+    "static/js/main.50eb5547.js"
+  ]
+}
