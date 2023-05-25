@@ -41,6 +41,9 @@
 .s-icon.javascript {
   color: #f7df1e;
 }
+.s-icon.bootstrap {
+  color: #8011f5;
+}
 .s-icon.sass {
   color: #c66394;
 }
@@ -61,6 +64,12 @@
 }
 .s-icon.node {
   color: #215732;
+}
+.s-icon.redux {
+  color: #7247b5;
+}
+.s-icon.firebase {
+  color: #ffca2b;
 }
 
 @media (max-width: 575px) {

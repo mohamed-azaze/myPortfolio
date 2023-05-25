@@ -41,9 +41,10 @@ const Intro = () => {
                                 <br />
                                 <span >{text}<Cursor /></span>
                             </h1>
-                            <p>I'm Egyptian based front end developer,
-                                I graduated form Management Information Systems
-                                at New Cairo Academy, some skills HTML5-CSS3-Javascript.......
+                            <p>Front-End Developer who is passionate about programming and building fully responsive,
+                                SEO friendly applications written with clean code in clean architecture for best performance,
+                                using new technologies at all levels of difficulty.
+
                             </p>
                         </div>
                         <div className={Style["i-my-cv"]}>

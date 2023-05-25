@@ -10,6 +10,8 @@ import azazeShot from "../../imgs/Projects/azaze-shot.png"
 import azaze from "../../imgs/Projects/azaze.png"
 import portfolio from "../../imgs/Projects/Home.png"
 import CRUD from "../../imgs/Projects/CRUD.png"
+import ReactEcommerceShot from "../../imgs/Projects/React-E-commerce-shot.png"
+import ReactEcommerce from "../../imgs/Projects/React-E-commerce.png"
 
 const Portfolio = () => {
     Title("Portfolio-Azaze")
@@ -39,6 +41,12 @@ const Portfolio = () => {
             name: "CRUD",
             lang: `HTML5, CSS3, JavaScript`,
             link: "https://mohamed-azaze.github.io/CRUD-App/"
+        },
+        {
+            image: `${ReactEcommerce}`,
+            name: "React-E-commerce",
+            lang: `React, Redux Toolkit, Redux AsyncThunk, Json Server`,
+            link: "#"
         },
     ]
     /////////////////////////////////
@@ -81,6 +89,9 @@ const Portfolio = () => {
                         </li>
                         <li onClick={popupHandler} data-name="CRUD">
                             <img src={CRUD} alt="img" />
+                        </li>
+                        <li onClick={popupHandler} data-name="React-E-commerce">
+                            <img src={ReactEcommerceShot} alt="img" />
                         </li>
                     </ul>
                 </div>

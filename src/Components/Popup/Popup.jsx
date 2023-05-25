@@ -5,8 +5,8 @@ const Popup = ({ project, closePop }) => {
         <>
             <div className={Style["pup-container"]}>
                 <div className={Style["pup-popup"]}>
-                    <div className={Style["pup-close-button"]}>
-                        <span onClick={closePop}>Close</span>
+                    <div className={Style["pup-close-button"]} onClick={closePop}>
+                        <span>Close</span>
                     </div>
                     <div className={Style["pup-img"]}>
                         <img src={project.image} alt="img" />

@@ -32,8 +32,8 @@ const About = () => {
                     <div className={Style["a-cards"]}>
                         <Card
                             heading={"SUMMARY"}
-                            one={"I'm a Front End Developer with a Passion for Creating Responsive Websites and web Applications."}
-                            two={"I have less than 1 Year of Experience and a Solid Background in Web Development."}
+                            one={"Front-End Developer who is passionate about programming and building fully responsive, SEO friendly applications written with clean code in clean architecture for best performance, using new technologies at all levels of difficulty."}
+                            // two={"I have less than 1 Year of Experience and a Solid Background in Web Development."}
                             positionClass={"c-card-1"}
                             showClass={showCard}
                         />

@@ -3,7 +3,7 @@ import Heading from "../Heading/Heading"
 import Style from "./Skills.module.css"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { SiJavascript } from "react-icons/si"
+import { SiJavascript, SiRedux, SiFirebase, SiBootstrap } from "react-icons/si"
 import { VscJson } from "react-icons/vsc"
 import { MdApi } from "react-icons/md"
 import { TbBrandNextjs } from "react-icons/tb"
@@ -48,6 +48,10 @@ const Skills = () => {
                             JavaScript
                         </li>
                         <li data-aos="zoom-in">
+                            <SiBootstrap className={`${Style["s-icon"]} ${Style.bootstrap}`} />
+                            Bootstrap
+                        </li>
+                        <li data-aos="zoom-in">
                             <FaSass className={`${Style["s-icon"]} ${Style.sass}`} />
                             Sass
                         </li>
@@ -74,6 +78,18 @@ const Skills = () => {
                         <li data-aos="zoom-in">
                             <FaNode className={`${Style["s-icon"]} ${Style.node}`} />
                             Node Express
+                        </li>
+                        <li data-aos="zoom-in">
+                            <SiRedux className={`${Style["s-icon"]} ${Style.redux}`} />
+                            Redux
+                        </li>
+                        <li data-aos="zoom-in">
+                            <SiRedux className={`${Style["s-icon"]} ${Style.redux}`} />
+                            Redux Toolkit
+                        </li>
+                        <li data-aos="zoom-in">
+                            <SiFirebase className={`${Style["s-icon"]} ${Style.firebase}`} />
+                            Firebase
                         </li>
                     </ul>
                 </div>
