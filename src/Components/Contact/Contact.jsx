@@ -4,26 +4,26 @@ import Heading from "../Heading/Heading"
 import MainMap from "./MainMap/MainMap"
 import Title from "../Title/Title"
 // EmailJS
-import emailjs from "@emailjs/browser"
+// import emailjs from "@emailjs/browser"
 
 const Contact = () => {
     Title("Contact-Azaze")
-    // Start Form Function
-    const form = useRef();
+    // // Start Form Function
+    // const form = useRef();
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    // const sendEmail = (e) => {
+    //     e.preventDefault();
 
-        emailjs.sendForm("service_abgx3jh", "template_h30e8ca", form.current, "8u5D18XOw-sV192mw")
-            .then((result) => {
-                alert("Message successfully sent!")
-                console.log(result.text);
-            }, (error) => {
-                alert("Failed to send the message, please try again")
-                console.log(error.text);
-            });
-        e.target.reset()
-    };
+    //     emailjs.sendForm("service_abgx3jh", "template_h30e8ca", form.current, "8u5D18XOw-sV192mw")
+    //         .then((result) => {
+    //             alert("Message successfully sent!")
+    //             console.log(result.text);
+    //         }, (error) => {
+    //             alert("Failed to send the message, please try again")
+    //             console.log(error.text);
+    //         });
+    //     e.target.reset()
+    // };
     // End Form Function
 
     return (
@@ -37,7 +37,9 @@ const Contact = () => {
             </div>
             <div className={`${Style["c-me-container"]} container`}>
                 <div className={Style["c-me-form"]}>
-                    <form ref={form} onSubmit={sendEmail}>
+                    <form
+                    // ref={form} onSubmit={sendEmail}
+                    >
                         <div className={Style["c-input-group"]}>
                             <input
                                 type="text"
