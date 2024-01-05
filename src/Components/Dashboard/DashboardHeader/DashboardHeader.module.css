@@ -1,0 +1,30 @@
+.dash-header-container {
+  background-color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  max-width: 100%;
+  padding-right: 50px;
+  box-shadow: 0px 2px 13px 0 #0000002b;
+}
+.username,
+.dashboard a,
+.website a,
+.logout a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+.username {
+  cursor: default;
+  color: var(--orange);
+}
+
+.dashboard a:hover,
+.dashboard a.active,
+.website a:hover,
+.logout a:hover {
+  color: var(--yellow);
+}

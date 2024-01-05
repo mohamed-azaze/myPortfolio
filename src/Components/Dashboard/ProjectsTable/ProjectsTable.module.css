@@ -1,0 +1,138 @@
+.project_table_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 30px;
+  background-color: #fff;
+  box-shadow: 3px 3px 7px 3px #928f8f61;
+}
+.project_heading_table {
+  padding: 30px;
+  width: 100%;
+}
+
+.project_heading {
+  padding-top: 10px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.project_heading h2 {
+  font-size: 45px;
+  font-family: CoolveticaRg;
+  letter-spacing: 3px;
+}
+.project_table {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 15px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: #273c75;
+}
+
+th,
+td {
+  border: 1px solid #ded9d9f0;
+  width: 150px;
+  min-width: 150px;
+  max-width: 220px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+th:first-of-type {
+  min-width: 60px;
+  max-width: 60px;
+}
+thead th {
+  height: 60px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #fff;
+  font-family: Gumela;
+}
+td {
+  font-size: 16px;
+  height: 105px;
+}
+.project_url div {
+  width: 120px;
+  max-width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  border: 1px solid #0d6efd;
+  transition: all 0.3s linear;
+}
+.project_url a {
+  display: block;
+  margin-top: 11px;
+  color: #0d6efd;
+  transition: all 0.3s linear;
+}
+.project_url div:hover {
+  background-color: #0d6efd;
+}
+.project_url div:hover a {
+  color: #fff;
+}
+.project_full_image {
+  display: block;
+  overflow-x: hidden;
+  min-width: 100%;
+  height: 135px;
+}
+
+.project_banner_image img {
+  width: 203px;
+}
+
+.project_button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.project_edit,
+.project_delete {
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+}
+
+.project_edit {
+  padding: 8px 13px;
+  border: 1px solid #198754;
+  background-color: #198754;
+}
+
+.project_edit:hover {
+  border-color: #157347;
+  background-color: #157347;
+}
+.project_edit:active {
+  background-color: #198754;
+}
+
+.project_delete {
+  padding: 8px 10px;
+  border: 1px solid #dc3545;
+  background-color: #dc3545;
+}
+
+.project_delete:hover {
+  border-color: #bb2d3b;
+  background-color: #bb2d3b;
+}
+.project_delete:active {
+  background-color: #dc3545;
+}
+
+.loading {
+  font-size: 30px;
+}

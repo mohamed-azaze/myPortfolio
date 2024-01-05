@@ -1,12 +1,21 @@
 .a-cards-contianer {
-  min-height: 800px;
-  margin: 10px auto 30px;
-  overflow-x: hidden;
-  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow: hidden;
 }
 
-@media (max-width: 767px) {
-  .a-cards-contianer {
-    height: 1600px;
+.a-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 50px;
+  place-items: center;
+  max-width: 1130px;
+  margin: 0 auto;
+}
+
+@media (max-width: 575px) {
+  .a-cards {
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr)) !important;
+    width: 400px;
   }
 }

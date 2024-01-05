@@ -1,0 +1,31 @@
+.dash-nav-container {
+  min-height: 100%;
+  background-color: #273c75;
+  box-shadow: 5px 0px 10px 0 #0000007d;
+}
+
+.dash-nav-container nav {
+  padding-top: 80px;
+}
+
+.dash-nav-container nav a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 15px;
+  transition: all 0.4s ease;
+}
+
+.dash-nav-container nav a:hover {
+  background-color: #ffffff2e;
+}
+
+.dash-nav-container nav svg {
+  font-size: 35px;
+}
+
+.dash-nav-container nav span {
+  opacity: 0;
+  letter-spacing: 2px;
+}

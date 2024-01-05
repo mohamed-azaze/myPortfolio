@@ -1,0 +1,46 @@
+.dashboard-container {
+  background-color: #f1f1f1;
+  min-height: 100vh;
+}
+
+.dash-nav-content {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+.dash-nav-icon {
+  padding: 13px 15px;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  z-index: 999;
+}
+
+.dash-nav-icon svg {
+  font-size: 35px;
+  color: #fff;
+}
+.dash-nav-icon:hover svg,
+.dash-nav-icon.active svg {
+  color: var(--orange);
+}
+
+.dash-nav {
+  width: 65px;
+  max-width: 100%;
+  transition: all 0.4s linear;
+}
+
+.dash-nav.active {
+  width: 320px;
+}
+.dash-nav.active nav span {
+  opacity: 1;
+  transition: opacity 0.5s linear 0.4s;
+}
+
+.dash-content {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}

@@ -5,19 +5,27 @@ import About from './Components/About/About.jsx';
 import Portfolio from './Components/Portfolio/Portfolio.jsx';
 import Contact from './Components/Contact/Contact.jsx';
 import './App.css';
+import Dashboard from './Components/Dashboard/Dashboard.jsx';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="myportfolio/" element={<Intro />} />
-        <Route path='myportfolio/about' element={<About />} />
-        <Route path='myportfolio/portfolio' element={<Portfolio />} />
-        <Route path='myportfolio/contact' element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
-  );
+
+
+    return (
+        <BrowserRouter>
+            <NavBar />
+            <Routes>
+                <Route path="myportfolio/" element={<Intro />} />
+                <Route path='myportfolio/about' element={<About />} />
+                <Route path='myportfolio/portfolio' element={<Portfolio />} />
+                <Route path='myportfolio/contact' element={<Contact />} />
+                <Route path='myportfolio/dashboard' element={<Dashboard />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
+
+
+
+

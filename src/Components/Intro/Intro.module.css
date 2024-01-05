@@ -66,32 +66,58 @@
 
   margin-bottom: 25px;
 }
+
 .i-my-cv {
-  margin-bottom: 30px;
-}
-.i-my-cv a {
-  color: #fff;
-  border: 2px solid var(--orange);
+  max-width: fit-content;
+  margin: 0 auto 30px;
+  outline: 2px solid var(--orange);
   border-radius: 20px;
-  padding: 8px 50px 8px 15px;
+  padding: 8px 50px 8px 12px;
   position: relative;
-  transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
-.i-my-cv a:hover {
-  background-color: var(--orange);
-  transform-origin: right;
-}
-.i-my-cv svg {
-  color: #fff;
-  border-radius: 50%;
-  padding: 12px 12px 10px;
+
+.i-my-cv::before {
+  content: "";
+  width: 0;
+  height: 100%;
   position: absolute;
-  top: -2px;
-  right: -2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 20px;
   background-color: var(--orange);
+  transform-origin: 100% 50%;
+  transition: all 0.7s ease-in-out;
+}
+
+.i-my-cv:hover::before {
+  width: 100%;
+}
+.i-my-cv:hover a,
+.i-my-cv:hover .i-my-cv-icon {
+  color: #000;
+}
+.i-my-cv a,
+.i-my-cv-icon {
+  color: #fff;
+  transition: all 0.6s ease-in-out;
+  transition-delay: 0.2s;
+}
+
+.i-my-cv a {
+  font-weight: bold;
+}
+
+.i-my-cv-icon {
+  background-color: var(--orange);
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 9999;
+  padding: 9px 12px;
+
+  border-radius: 20px;
 }
 
 .icons {

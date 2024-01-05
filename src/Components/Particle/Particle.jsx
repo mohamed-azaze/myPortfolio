@@ -60,9 +60,6 @@ const Particle = () => {
                         opacity: 0.5,
                         width: 1,
                     },
-                    collisions: {
-                        enable: true,
-                    },
                     move: {
                         directions: "none",
                         enable: true,
@@ -70,13 +67,13 @@ const Particle = () => {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 1,
+                        speed: 2,
                         straight: false,
                     },
                     number: {
                         density: {
                             enable: true,
-                            area: 800,
+                            area: 1000,
                         },
                         value: 80,
                     },
@@ -90,7 +87,7 @@ const Particle = () => {
                         value: { min: 1, max: 5 },
                     },
                 },
-                detectRetina: true,
+                detectRetina: false,
             }}
         />
     )

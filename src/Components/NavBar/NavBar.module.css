@@ -1,18 +1,40 @@
 .container {
+  max-width: 600px;
+  width: 100%;
+  height: 60px;
   background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 5px 4px 31px 1px #000000a6;
-  width: 700px;
-  height: 70px;
+  box-shadow: 5px 4px 17px 3px #000000b8;
   position: fixed;
-  top: 0;
+  top: -62px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9999;
+  z-index: 999;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  transition: all 0.5s linear;
+}
+.container::before {
+  content: "";
+  width: 55%;
+  height: 22px;
+  background-color: var(--orange);
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
-nav,
-nav .n-links,
-nav .n-links a {
+.container:hover {
+  top: 0;
+}
+
+nav {
+  height: 100%;
+}
+
+nav .n-links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +57,13 @@ nav a.active {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
+    top: 0px;
+    border-radius: 0%;
+  }
+
+  .container::before {
+    content: unset;
   }
   .n-logo,
   .n-icon {
@@ -53,6 +81,7 @@ nav a.active {
 
   .n-icon {
     color: var(--yellow);
+    padding-top: 12.5px;
   }
 
   nav .n-links {
@@ -61,18 +90,16 @@ nav a.active {
     padding-bottom: 20px;
     height: 230px;
     width: 100%;
-    background-color: #000;
     position: absolute;
     top: -290px;
     right: 0px;
-    z-index: -1;
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 5px 4px 31px 1px #000000a6;
     transition: top 0.4s;
   }
 
   nav .active {
-    top: 70px;
+    top: 61px;
   }
 }
 

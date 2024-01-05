@@ -1,0 +1,111 @@
+.langtool_table_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 30px;
+  background-color: #fff;
+  box-shadow: 3px 3px 7px 3px #928f8f61;
+}
+.langtool_heading_table {
+  padding: 30px;
+  width: 100%;
+}
+
+.langtool_heading {
+  padding-top: 10px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.langtool_heading h2 {
+  font-size: 45px;
+  font-family: CoolveticaRg;
+  letter-spacing: 3px;
+}
+.langtool_table {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 15px;
+}
+.langtool_table_container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.langtool_table_container thead {
+  background-color: #273c75;
+}
+
+.langtool_table_container th,
+.langtool_table_container td {
+  border: 1px solid #ded9d9f0;
+  width: 150px;
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.langtool_table_container th:first-of-type {
+  min-width: 60px;
+  max-width: 60px;
+}
+.langtool_table_container thead th {
+  height: 60px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #fff;
+  font-family: Gumela;
+}
+.langtool_table_container td {
+  font-size: 16px;
+  height: 50px;
+}
+
+.lang_icon i {
+  font-size: 35px;
+}
+.language_button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.lang_edit,
+.lang_delete {
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+}
+
+.lang_edit {
+  padding: 8px 13px;
+  border: 1px solid #198754;
+  background-color: #198754;
+}
+
+.lang_edit:hover {
+  border-color: #157347;
+  background-color: #157347;
+}
+.lang_edit:active {
+  background-color: #198754;
+}
+
+.lang_delete {
+  padding: 8px 10px;
+  border: 1px solid #dc3545;
+  background-color: #dc3545;
+}
+
+.lang_delete:hover {
+  border-color: #bb2d3b;
+  background-color: #bb2d3b;
+}
+.lang_delete:active {
+  background-color: #dc3545;
+}
+
+.loading {
+  font-size: 30px;
+}

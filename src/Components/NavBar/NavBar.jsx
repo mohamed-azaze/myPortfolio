@@ -37,27 +37,32 @@ const NavBar = () => {
                     <div className={`${Style["n-links"]} ${Style[activeCLass]}`}>
                         <NavLink
                             onClick={() => removeActive()}
-                            to="myportfolio/" >
+                            to="/myportfolio" >
                             Home
                         </NavLink>
                         <NavLink
                             onClick={() => removeActive()}
-                            to="myportfolio/about">
+                            to="about">
                             About
                         </NavLink>
                         <NavLink
                             onClick={() => removeActive()}
-                            to="myportfolio/portfolio">
+                            to="portfolio">
                             Portfolio
                         </NavLink>
                         <NavLink
                             onClick={() => removeActive()}
-                            to="myportfolio/contact">
+                            to="contact">
                             Contact
+                        </NavLink>
+                        <NavLink
+                            onClick={() => removeActive()}
+                            to="dashboard">
+                            Dashboard
                         </NavLink>
                     </div>
                 </nav>
-            </div >
+            </div>
         </>
     )
 }
