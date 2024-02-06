@@ -1,42 +1,31 @@
 import { useEffect } from 'react'
-import Style from './ProjectsTable.module.css'
-import axiosClient from '../../../axios_client'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { deleteDoc, doc } from 'firebase/firestore'
+import { db } from '../../../Firebase'
+import { useDispatch, useSelector } from "react-redux"
+import { getProjectsFunc } from '../../../Store/projectsSlice'
+import Style from './ProjectsTable.module.css'
+
 const ProjectsTable = () => {
-    const [projects, setProjects] = useState([]);
-    const [loading, setLoading] = useState(false)
+    const { projectsData, isLoading } = useSelector((state) => state.getProjects)
+    const dispatch = useDispatch()
+
     useEffect(() => {
-        return () => {
+        dispatch(getProjectsFunc())
+    }, [dispatch])
 
-            getAllProject()
 
-        }
-    }, [])
-
-    const getAllProject = () => {
-        setLoading(true)
-        axiosClient.get("/projects").then(({ data }) => {
-            setProjects(data)
-            setLoading(false)
-        }).catch(errors => {
-
-            const response = errors.response;
-            setLoading(false)
-            console.log(response)
-        })
-    }
-
-    const deleleProject = (projectId) => {
+    const deleleProject = async (projectId) => {
         if (!window.confirm("Are you sure you want to delete this Project")) {
             return
         }
-        axiosClient.delete(`projects/${projectId}`).then(() => {
-            getAllProject()
-        })
+        const docRef = doc(db, "Projects", projectId);
+        await deleteDoc(docRef);
+        dispatch(getProjectsFunc())
+
     }
 
-    const viewProjects = projects.map((project, index) => (
+    const viewProjects = projectsData.map((project, index) => (
         <tr key={project.id}>
             <th>{index + 1}</th>
             <td>{project.name}</td>
@@ -47,14 +36,14 @@ const ProjectsTable = () => {
                 </div>
             </td>
             <td className={`${Style['project_full_image']}`}>
-                <img src={`http://localhost:8000/storage/projects/${project.name}/${project.full_image}`} alt="" />
+                <img src={`${project.full_image.url}`} alt="" />
             </td>
             <td className={`${Style['project_banner_image']}`}>
-                <img src={`http://localhost:8000/storage/projects/${project.name}/${project.banner_image}`} alt="" />
+                <img src={`${project.banner_image.url}`} alt="" />
             </td>
             <td>
                 <ul>
-                    {JSON.parse(project.languages).map((lang, index) => (
+                    {project.languages.map((lang, index) => (
                         <li key={index}>{lang.toUpperCase()}</li>
                     ))}
                 </ul>
@@ -95,13 +84,18 @@ const ProjectsTable = () => {
                             </thead>
 
                             <tbody>
-                                {loading &&
+
+                                {isLoading &&
                                     <tr>
-                                        <td colSpan={7} className={`${Style['loading']}`}>Loading...</td>
+                                        <td
+                                            colSpan={7}
+                                            className={`${Style['loading']}`}
+                                        >
+                                            Loading...
+                                        </td>
                                     </tr>
                                 }
-                                {!loading &&
-
+                                {!isLoading &&
                                     viewProjects
                                 }
                             </tbody>

@@ -1,22 +1,25 @@
 import Heading from '../../Heading/Heading'
 import Style from './Login.module.css'
-import axiosClient from '../../../axios_client'
+// import axiosClient from '../../../axios_client'
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStateContext } from '../../../context/ContextProvider'
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../Firebase/index"
 
 const Login = () => {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-
     const { setUser, setToken, token } = useStateContext()
     const [errors, setErrors] = useState([])
 
 
     const navigate = useNavigate()
 
+
+
     if (token) {
-        navigate('/dashboard')
+        navigate('myportfolio/dashboard')
     }
     const onsubmit = (e) => {
         e.preventDefault();
@@ -24,26 +27,41 @@ const Login = () => {
             email: emailRef.current.value,
             password: passwordRef.current.value,
         }
-        axiosClient.post("/login", payload).then((data) => {
-            setToken(data.token);
-            setUser(data.user);
-        }).catch(error => {
-            const response = error.response;
-
-            if (response && response.status === 422) {
-                if (response.data.errors) {
-
-                    setErrors(response.data.errors)
+        signInWithEmailAndPassword(auth, payload.email, payload.password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                setToken(user.accessToken)
+                setUser({ name: "Azaze" })
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                if (errorCode === "auth/invalid-credential") {
+                    setErrors("invalid email or Password ")
                 } else {
-                    setErrors({
-                        email: [response.data.message]
-                    })
-
+                    setErrors(errorMessage)
                 }
-            }
+            });
 
-        })
 
+        // axiosClient.post("/login", payload).then((data) => {
+        //     setToken(data.token);
+        //     setUser(data.user);
+        // }).catch(error => {
+        //     const response = error.response;
+
+        //     if (response && response.status === 422) {
+        //         if (response.data.errors) {
+
+        //             setErrors(response.data.errors)
+        //         } else {
+        //             setErrors({
+        //                 email: [response.data.message]
+        //             })
+
+        //         }
+        //     }
+        // })
     }
 
     return (
@@ -62,17 +80,15 @@ const Login = () => {
                         <form onSubmit={(e) => onsubmit(e)} >
                             <label htmlFor="email">Email</label>
                             <input ref={emailRef} type="email" name="email" id="email" />
-                            {errors['email'] &&
-                                errors['email'].map(error => (
-                                    <>
-                                        <div className='error-message'>
-                                            {error}
-                                        </div>
-                                    </>
-                                ))
-                            }
                             <label htmlFor="password">Password</label>
                             <input ref={passwordRef} type="password" />
+                            {errors &&
+                                <>
+                                    <div className='error-message'>
+                                        {errors}
+                                    </div>
+                                </>
+                            }
                             <button>Login</button>
                         </form>
                     </div>

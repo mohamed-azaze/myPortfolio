@@ -32,8 +32,9 @@
   transform: scale(1.08) !important;
 }
 
-.s-skills-container > ul li i {
-  font-size: 60px;
+.s-skills-container > ul li img {
+  width: 55px;
+  min-height: 10px;
   margin-bottom: 15px;
 }
 

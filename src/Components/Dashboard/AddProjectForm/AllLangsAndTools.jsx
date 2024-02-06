@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react'
-import axiosClient from '../../../axios_client'
+import { useEffect } from 'react'
 import Style from './AddProjectForm.module.css'
+import { useDispatch, useSelector } from "react-redux"
+import { getLangOrToolfunc } from '../../../Store/createLangAnfToolSlice';
 
 const AllLangsAndTools = ({ getValue, langs }) => {
-    const [skills, setSkills] = useState([]);
+    const { LangOrToolData } = useSelector(state => state.addLangOrTool)
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        getAllSkills();
+        dispatch(getLangOrToolfunc())
         const checkInput = document.querySelectorAll("input[type='checkbox']");
         const languages = langs
         for (let i = 0; i < checkInput.length; i++) {
@@ -16,16 +19,12 @@ const AllLangsAndTools = ({ getValue, langs }) => {
                 }
             }
         }
-    }, [langs])
+    }, [dispatch, langs])
 
-    const getAllSkills = () => {
-        axiosClient.get("/lang-tool").then(({ data }) => {
-            setSkills(data)
-        })
-    }
 
-    const viewSkills = skills.map(skill => (
-        <div className={`${Style['check-form']}`} key={skill.id}>
+
+    const viewSkills = LangOrToolData.map((skill, index) => (
+        <div className={`${Style['check-form']}`} key={index}>
             <input
                 onChange={getValue}
                 type="checkbox"

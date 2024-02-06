@@ -39,11 +39,9 @@ const About = () => {
                         />
                         <Card
                             heading={"SUMMARY"}
-                            one={"Front-End Developer who is passionate" +
-                                "about programming and building fully responsive," +
-                                "SEO friendly applications written with clean code in" +
-                                "clean architecture for best performance, using new technologies" +
-                                "at all levels of difficulty."}
+                            one={`Full Stack Developer who is passionate about programming and building fully responsive, SEO friendly
+                            applications written with clean code in clean architecture for best performance, using new technologies at all
+                            levels of difficulty.`}
                             // two={"I have less than 1 Year of Experience and a Solid Background in Web Development."}
                             className={"summary-card"}
                         />

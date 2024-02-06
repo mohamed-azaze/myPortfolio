@@ -1,6 +1,7 @@
 import Style from "./Popup.module.css"
 
 const Popup = ({ project, closePop }) => {
+
     return (
         <>
             <div className={Style["pup-container"]}>
@@ -9,15 +10,17 @@ const Popup = ({ project, closePop }) => {
                         <span>Close</span>
                     </div>
                     <div className={Style["pup-img"]}>
-                        <img src={project.image} alt="img" />
+                        <img src={project.full_image && project.full_image.url} alt="img" />
                     </div>
                     <div className={Style["pup-info"]}>
                         <span className={Style["pup-name"]}><span>Project Name:</span> {project.name}</span>
-                        <span className={Style["pup-lag"]}><span>Languages:</span> {project.lang}</span>
+                        <span className={Style["pup-lag"]}><span>Languages:</span>
+                            {`${project.languages}`}
+                        </span>
                     </div>
                     <div className={Style["pup-view-button"]}>
                         <a
-                            href={project.link}
+                            href={project && project.url}
                             target="_blank"
                             rel="noreferrer">
                             LIVE

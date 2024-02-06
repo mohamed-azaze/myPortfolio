@@ -42,22 +42,22 @@ const NavBar = () => {
                         </NavLink>
                         <NavLink
                             onClick={() => removeActive()}
-                            to="about">
+                            to="myportfolio/about">
                             About
                         </NavLink>
                         <NavLink
                             onClick={() => removeActive()}
-                            to="portfolio">
+                            to="myportfolio/portfolio">
                             Portfolio
                         </NavLink>
                         <NavLink
                             onClick={() => removeActive()}
-                            to="contact">
+                            to="myportfolio/contact">
                             Contact
                         </NavLink>
                         <NavLink
                             onClick={() => removeActive()}
-                            to="dashboard">
+                            to="myportfolio/dashboard">
                             Dashboard
                         </NavLink>
                     </div>

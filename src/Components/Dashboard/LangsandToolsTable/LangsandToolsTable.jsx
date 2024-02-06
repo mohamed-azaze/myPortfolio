@@ -1,50 +1,45 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Style from './LangsandToolsTable.module.css'
-import axiosClient from '../../../axios_client'
 import { Link } from 'react-router-dom'
-const LangsandToolsTable = () => {
+import { useDispatch, useSelector } from "react-redux"
+import { getLangOrToolfunc } from '../../../Store/createLangAnfToolSlice'
+import { deleteDoc, doc } from 'firebase/firestore'
+import { db } from '../../../Firebase'
 
-  const [langsTools, setLangsTools] = useState([]);
-  const [loading, setLoading] = useState(false)
+
+
+const LangsandToolsTable = () => {
+  const { LangOrToolData, isLoading } = useSelector((state) => state.addLangOrTool)
+
+  const dispatch = useDispatch()
+
+
+
+
   useEffect(() => {
-    return () => {
-      getAllLangandTool()
-    }
+    dispatch(getLangOrToolfunc())
   }, [])
 
-  const getAllLangandTool = () => {
-    setLoading(true)
-    axiosClient.get("/lang-tool").then(({ data }) => {
-      setLangsTools(data)
-      setLoading(false)
-    }).catch(errors => {
-      const response = errors.response;
-      setLoading(false)
-      console.log(response)
-    })
-  }
 
 
-  const delelelang = (langId) => {
+  const delelelang = async (langId) => {
     if (!window.confirm("Are you sure you want to delete this Language")) {
       return
     }
-    axiosClient.delete(`lang-tool/${langId}`).then(() => {
-      getAllLangandTool()
-    })
+    const docRef = doc(db, "LanguagesAndTools", langId);
+    await deleteDoc(docRef)
+    dispatch(getLangOrToolfunc())
+
   }
 
 
 
-  const viewLangandTool = langsTools.map((lang, index) => (
-    <tr key={lang.id}>
+  const viewLangandTool = LangOrToolData.map((lang, index) => (
+    <tr key={lang.id} >
       <th>{index + 1}</th>
       <td>{lang.name}</td>
       <td className={`${Style['lang_icon']}`}>
-        <i className={`${lang.icon_classes}`} style={{ color: `${lang.color}` }}></i>
-      </td>
-      <td style={{ backgroundColor: `${lang.color}` }}>
-        {lang.color}
+        <img src={`${lang.icon}`} alt="" />
       </td>
       <td>
         <div className={`${Style['language_button']}`}>
@@ -77,18 +72,17 @@ const LangsandToolsTable = () => {
                   <th>ID</th>
                   <th>Language Name</th>
                   <th>Language Icon</th>
-                  <th>Icon Color</th>
                   <th>Prosses</th>
                 </tr>
               </thead>
 
               <tbody>
-                {loading &&
+                {isLoading &&
                   <tr>
-                    <td colSpan={7} className={`${Style['loading']}`}>Loading...</td>
+                    <td colSpan={7} className={`${Style['isLoading']}`}>Loading...</td>
                   </tr>
                 }
-                {!loading &&
+                {!isLoading &&
                   viewLangandTool
 
                 }

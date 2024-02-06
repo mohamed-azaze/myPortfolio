@@ -7,10 +7,12 @@ import { IoCloseSharp } from 'react-icons/io5'
 import { IoIosMenu } from 'react-icons/io'
 import Title from "../Title/Title";
 import { useStateContext } from '../../context/ContextProvider'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../../Firebase'
 
 const Dashboard = () => {
     Title("Dashboard")
-    const { notification, token } = useStateContext()
+    const { notification, token, setToken } = useStateContext()
     const [navIcon, serNavIcon] = useState(null)
     const [navActive, setNavActive] = useState(localStorage.getItem("DASH_NAV_ACTIVE"))
     const navigate = useNavigate()
@@ -20,6 +22,11 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                setToken(null)
+            }
+        })
         if (localStorage.getItem("DASH_NAV_ACTIVE") === null) {
             setNavActive("active")
             serNavIcon(<IoCloseSharp />)
@@ -30,7 +37,7 @@ const Dashboard = () => {
         if (localStorage.getItem("DASH_NAV_ACTIVE") === '') {
             serNavIcon(<IoIosMenu />)
         }
-    }, [])
+    }, [setToken])
 
     const openCloseMenu = () => {
         if (navActive === 'active') {

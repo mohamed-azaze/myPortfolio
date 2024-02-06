@@ -13,11 +13,15 @@ import Login from './Components/Dashboard/Login/Login';
 
 const router = createBrowserRouter([
     {
-        path: '/dashboard',
+        path: 'myportfolio/dashboard',
         element: <Dashboard />,
         children: [
             {
-                path: '/dashboard',
+                path: 'myportfolio/dashboard',
+                element: <Navigate to='/dashboard' />,
+            },
+            {
+                path: '/myportfolio/dashboard',
                 element: <ContainerTables />
             },
             {
@@ -52,19 +56,19 @@ const router = createBrowserRouter([
                 element: <Intro />,
             },
             {
-                path: "about",
+                path: "myportfolio/about",
                 element: <About />
             },
             {
-                path: "portfolio",
+                path: "myportfolio/portfolio",
                 element: <Portfolio />
             },
             {
-                path: "contact",
+                path: "myportfolio/contact",
                 element: <Contact />
             },
             {
-                path: "login",
+                path: "myportfolio/login",
                 element: <Login />
             }
         ]

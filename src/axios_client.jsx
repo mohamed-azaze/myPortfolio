@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosClient = axios.create({
-    baseURL: `${process.env.REACT_APP_API_BASE_URL}/api`,
+    // baseURL: `${process.env.REACT_APP_API_BASE_URL}/api`,
 
 })
 
@@ -13,18 +13,18 @@ const axiosClient = axios.create({
 // })
 
 
-axiosClient.interceptors.response.use((response) => {
+// axiosClient.interceptors.response.use((response) => {
 
-    return response
-}, (error) => {
+//     return response
+// }, (error) => {
 
-    const { response } = error;
-    if (response.status === 401) {
-        localStorage.removeItem("ACCESS_TOKEN")
-    }
+//     const { response } = error;
+//     if (response.status === 401) {
+//         localStorage.removeItem("ACCESS_TOKEN")
+//     }
 
-    throw error
-})
+//     throw error
+// })
 
 
 
