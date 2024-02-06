@@ -52,7 +52,7 @@ const router = createBrowserRouter([
                 element: <Navigate to='/myportfolio' />,
             },
             {
-                path: '/myportfolio',
+                path: '/',
                 element: <Intro />,
             },
             {
@@ -69,7 +69,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "myportfolio/login",
-                element: <Login />
+                element: <Login />,
+
             }
         ]
     }
