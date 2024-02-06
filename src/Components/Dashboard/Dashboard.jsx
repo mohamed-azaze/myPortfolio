@@ -18,7 +18,7 @@ const Dashboard = () => {
     const navigate = useNavigate()
 
     if (!token) {
-        navigate('myportfolio/login')
+        navigate('/myportfolio/login')
     }
 
     useEffect(() => {

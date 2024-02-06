@@ -52,7 +52,7 @@ const router = createBrowserRouter([
                 element: <Navigate to='/myportfolio' />,
             },
             {
-                path: '/',
+                path: '/myportfolio',
                 element: <Intro />,
             },
             {
