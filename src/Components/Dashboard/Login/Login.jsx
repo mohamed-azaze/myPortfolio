@@ -19,7 +19,7 @@ const Login = () => {
 
 
     if (token) {
-        navigate('myportfolio/dashboard')
+        navigate('/myportfolio/dashboard')
     }
     const onsubmit = (e) => {
         e.preventDefault();
