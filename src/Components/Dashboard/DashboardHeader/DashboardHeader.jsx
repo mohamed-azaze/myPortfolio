@@ -27,7 +27,7 @@ const DashboardHeader = () => {
                     <NavLink to={'/myportfolio/dashboard'}>Dashboard</NavLink>
                 </div>
                 <div className={`${Style['website']}`}>
-                    <NavLink to={'/myportfolio'} target='_blank'>Website</NavLink>
+                    <NavLink to={'/myportfolio/'} target='_blank'>Website</NavLink>
                 </div>
                 <div className={`${Style['logout']}`}>
                     <a href='#' onClick={onLogOut} >Logout</a>
